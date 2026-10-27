@@ -1,0 +1,237 @@
+@import "tailwindcss";
+
+:root {
+  /* Colors — handoff + Figma DS */
+  --bg-default: #f3efe5;
+  --surface-paper: #faf8f2;
+  --surface-secondary: #eae4d8;
+  --surface-inverse: #292923;
+
+  --text-primary: #292923;
+  --text-secondary: #5f5d54;
+  --text-tertiary: #77756c;
+  --text-disabled: #8a8478;
+  --text-on-accent: #faf8f2;
+  --text-accent: #526b55;
+  --text-accent-strong: #3f5543;
+  --text-danger: #94573b;
+  --text-inverse: #faf8f2;
+
+  --border-default: #d8d1c4;
+  --border-strong: #8a8478;
+  --border-focus: #526b55;
+
+  --accent-default: #526b55;
+  --accent-hover: #3f5543;
+  --accent-subtle: #dce8de;
+  --accent-alt-default: #b66b4d;
+  --accent-alt-text: #9a573b;
+
+  --danger-default: #94573b;
+  --danger-hover: #7f4930;
+  --danger-subtle: #f1e5e0;
+
+  --overlay: color-mix(in srgb, #292923 40%, transparent);
+
+  /* Type sizes */
+  --type-size-44: 44px;
+  --type-size-32: 32px;
+  --type-size-24: 24px;
+  --type-size-18: 18px;
+  --type-size-16: 16px;
+  --type-size-14: 14px;
+  --type-size-12: 12px;
+
+  /* Spacing */
+  --space-2: 2px;
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-48: 48px;
+  --space-64: 64px;
+  --space-96: 96px;
+
+  /* Radius */
+  --radius-none: 0;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 999px;
+
+  /* Fixed sizes */
+  --size-touch: 44px;
+  --size-nav-item: 40px;
+  --size-icon: 20px;
+  --size-sidebar: 240px;
+  --size-column: 720px;
+  --size-reading: 640px;
+  --size-border: 1px;
+  --size-focus-ring: 2px;
+  --size-tabbar: 56px;
+  --size-fab: 56px;
+}
+
+@theme inline {
+  --color-bg: var(--bg-default);
+  --color-paper: var(--surface-paper);
+  --color-secondary: var(--surface-secondary);
+  --color-ink: var(--text-primary);
+  --color-muted: var(--text-secondary);
+  --color-faint: var(--text-tertiary);
+  --color-border: var(--border-default);
+  --color-border-strong: var(--border-strong);
+  --color-accent: var(--accent-default);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-subtle: var(--accent-subtle);
+  --color-on-accent: var(--text-on-accent);
+  --color-danger: var(--danger-default);
+  --color-danger-hover: var(--danger-hover);
+  --color-danger-subtle: var(--danger-subtle);
+  --color-clay: var(--accent-alt-default);
+  --color-clay-text: var(--accent-alt-text);
+
+  --font-serif: var(--font-instrument-serif), ui-serif, Georgia, serif;
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  background: var(--bg-default);
+  color: var(--text-primary);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: var(--type-size-16);
+  line-height: 24px;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--accent-subtle);
+  color: var(--text-primary);
+}
+
+:focus-visible {
+  outline: var(--size-focus-ring) solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+.font-display {
+  font-family: var(--font-instrument-serif), ui-serif, Georgia, serif;
+  font-size: var(--type-size-44);
+  line-height: 52px;
+  font-weight: 400;
+}
+
+.font-h1 {
+  font-family: var(--font-instrument-serif), ui-serif, Georgia, serif;
+  font-size: var(--type-size-32);
+  line-height: 40px;
+  font-weight: 400;
+}
+
+.font-h2 {
+  font-family: var(--font-instrument-serif), ui-serif, Georgia, serif;
+  font-size: var(--type-size-24);
+  line-height: 32px;
+  font-weight: 400;
+}
+
+.font-body-lg {
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: var(--type-size-18);
+  line-height: 30px;
+  font-weight: 400;
+}
+
+.font-body {
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: var(--type-size-16);
+  line-height: 24px;
+  font-weight: 400;
+}
+
+.font-body-sm {
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: var(--type-size-14);
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.font-ui {
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: var(--type-size-14);
+  line-height: 20px;
+  font-weight: 500;
+}
+
+.font-caption {
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: var(--type-size-12);
+  line-height: 16px;
+  font-weight: 500;
+}
+
+.font-mono-meta {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: var(--type-size-12);
+  line-height: 16px;
+  font-weight: 400;
+}
+
+.font-mono-caps {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: var(--type-size-12);
+  line-height: 16px;
+  font-weight: 500;
+  letter-spacing: 0.72px;
+  text-transform: uppercase;
+}
+
+.font-mono-lg {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: var(--type-size-14);
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.prose-entry {
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: var(--type-size-18);
+  line-height: 30px;
+  color: var(--text-primary);
+  white-space: pre-wrap;
+}
+
+.prose-entry p + p {
+  margin-top: 1.25em;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
